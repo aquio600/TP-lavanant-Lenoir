@@ -1,17 +1,10 @@
 package org.example;
 
+import java.util.List;
+
 public class Passager extends Personne {
     int passeport;
-
-    public void reserverVol() {
-        //...
-    }
-    public void annulerReservation() {
-        //...
-    }
-    public void obtenirReservation() {
-        //...
-    }
+    public List<Reservation> listDeVolsReserves;
 
     public static void main(String[] args) {
         Reservation.annulerReservation();
@@ -19,6 +12,7 @@ public class Passager extends Personne {
 
     //constructeur
     public Passager(int passeport) {
+        //super(identifiant, nom, adresse);
         this.passeport = passeport;
     }
     //getter
@@ -30,5 +24,15 @@ public class Passager extends Personne {
         this.passeport = passeport;
     }
 
+    //Methodes
+    public void reserverVol() {
+        //Reservation newReservation = getPasseport();
+    }
+    public void annulerReservation() {
 
+        //...
+    }
+    public void obtenirReservation() {
+        //...
+    }
 }
