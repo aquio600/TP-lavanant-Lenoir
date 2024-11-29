@@ -33,6 +33,6 @@ public class Passager extends Personne {
         //...
     }
     public void obtenirReservation() {
-        //...
+        int idreservation = 1;
     }
 }
