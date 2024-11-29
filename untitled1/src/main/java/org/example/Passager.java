@@ -17,6 +17,18 @@ public class Passager extends Personne {
         Reservation.annulerReservation();
     }
 
-    //constructeur, getter, setter
+    //constructeur
+    public Passager(int passeport) {
+        this.passeport = passeport;
+    }
+    //getter
+    public int getPasseport() {
+        return passeport;
+    }
+    //setter
+    public void setPasseport(int passeport) {
+        this.passeport = passeport;
+    }
+
 
 }
