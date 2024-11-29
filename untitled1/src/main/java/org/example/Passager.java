@@ -1,7 +1,7 @@
 package org.example;
 
 public class Passager extends Personne {
-    int paseport;
+    int passeport;
 
     public void reserverVol() {
         //...
@@ -13,5 +13,10 @@ public class Passager extends Personne {
         //...
     }
 
+    public static void main(String[] args) {
+        Reservation.annulerReservation();
+    }
+
+    //constructeur, getter, setter
 
 }

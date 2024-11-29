@@ -5,12 +5,13 @@ public class Avion {
     String modele;
     int capacite;
 
-    public void affecterVol() {
+    public static void affecterVol() {
         //...
     }
     public void verifierDisponibilite() {
         //...
     }
+
 
 
 }

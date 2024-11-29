@@ -9,5 +9,8 @@ public class Aeroport {
         //...
     }
 
+    public static void main(String[] args) {
+        Avion.affecterVol();
+    }
 
 }

@@ -10,7 +10,7 @@ public class Reservation {
     public void confirmerReservation() {
         //...
     }
-    public void annulerReservation() {
+    public static void annulerReservation() {
         //...
     }
     public void modifierReservation() {
