@@ -1,5 +1,6 @@
 package org.example;
 
+import java.util.Date;
 import java.util.List;
 
 public class Passager extends Personne {
@@ -25,10 +26,13 @@ public class Passager extends Personne {
     }
 
     //Methodes
-    public void reserverVol() {
-        //Reservation newReservation = getPasseport();
+    public void reserverVol(Vol numvol) {
+        Reservation reservation = new Reservation(numvol,new Date(),);
+        this.listDeVolsReserves.add(reservation);
+
     }
-    public void annulerReservation() {
+    public void annulerReservation(Reservation resevation) {
+        this.listDeVolsReserves.remove(resevation);
 
         //...
     }
