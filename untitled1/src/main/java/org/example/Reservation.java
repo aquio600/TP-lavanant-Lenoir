@@ -12,20 +12,6 @@ public class Reservation {
         this.dateReservation = dateReservation;
         this.numeroReservation= numeroReservation;
         this.statut = "enregistré";
-
-    }
-
-
-    public void confirmerReservation() {
-        this.statut ="confirmé";
-        //...
-    }
-    public static void annulerReservation() {
-        //...
-
-    }
-    public void modifierReservation() {
-        //...
     }
 
     //constructor
@@ -34,6 +20,7 @@ public class Reservation {
         this.dateReservation = dateReservation;
         this.statut = statut;
     }
+
     //Getter
     public int getNumeroReservation() {
         return numeroReservation;
@@ -44,6 +31,7 @@ public class Reservation {
     public String getStatut() {
         return statut;
     }
+
     //setter
     public void setNumeroReservation(int numeroReservation) {
         this.numeroReservation = numeroReservation;
@@ -55,5 +43,61 @@ public class Reservation {
         this.statut = statut;
     }
 
+    //Fonctions CRUD
+    private List<Reservation> reservations = new ArrayList<>();
 
+    //CREATE
+    public void ajouterReservation(Reservation reservation) {
+        reservation.add(reservation);
+        System.out.println("Réservation ajoutée : ", reservation);
+    }
+
+    //READ
+    public List<Reservation> listerReservation() {
+        return reservations;
+    }
+    public Reservation chercherReservation(int numeroReservation) {
+        for (Reservation reservation : reservations) {
+            if (reservation.getNumeroReservation() == numeroReservation) {
+                return reservation;
+            }
+        }
+        return null;
+    }
+
+    //UPDATE
+    public boolean modifierReservation(int numeroReservation, Date dateReservation, String statut) {
+        Reservation reservation = prendReservation(numeroReservation);
+        if (reservation != null) {
+            reservation.setDateReservation(dateReservation);
+            reservation.setStatut(statut);
+            System.out.println("Modification de la réservation : " + reservation);
+            return true;
+        }
+        return false;
+    }
+
+    //DELETE : fonction annulerReservation() demandée
+    public boolean annulerReservation(int numeroReservation) {
+        Reservation reservation = prendReservation(numeroReservation);
+        if (reservation != null) {
+            reservations.remove(reservation);
+            System.out.println("La réservation est bien supprimée : " + reservation);
+            return true;
+        }
+        return false;
+    }
+    //Fin CRDU
+
+
+    //Fonction confirmerReservation()
+    public void confirmerReservation() {
+        this.statut ="confirmé";
+        //...
+    }
+
+    //Fonction modifierReservation()
+    public void modifierReservation() {
+        //...
+    }
 }
