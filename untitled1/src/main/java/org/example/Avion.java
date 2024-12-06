@@ -6,7 +6,7 @@ import java.util.List;
 public class Avion {
     int immatriculation;
     String modele;
-    int capacite;
+    private int capacite;
 
     //constructor
     public Avion(int immatriculation, String modele, int capacite) {
@@ -83,9 +83,18 @@ public class Avion {
     }
     //Fin CRDU
 
-    //Fonction affecterVol()
-    public static void affecterVol() {
-        //...
+    private Avion prendAvion(int immatriculation) {
+        for (Avion a : avions) {
+            if (a.getImmatriculation() == immatriculation) {
+                return a;
+            }
+        }
+        return null ;
+    }
+
+    //Fonction AffecterVol()
+    public void AffecterVol(Vol vol){
+        avions.ajouterAvion(avion);
     }
 
     //Fonction verifierDisponibilite()

@@ -10,7 +10,8 @@ public class Employé extends Personne{
 
     }
 
-    public void ObtenirRole(){
-    System.out.println("Role = void");
-}
+    //Fonction ObtenirRole()
+    public void ObtenirRole() {
+        System.out.println("Role = void");
+    }
 }

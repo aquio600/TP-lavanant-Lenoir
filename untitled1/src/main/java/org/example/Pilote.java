@@ -9,9 +9,12 @@ public class Pilote extends Employé {
         System.out.println("Role = Pilote");
     }
 
+    //Fonction AffecterVol()
     public void AffecterVol(Vol vol){
         vol.addpersonel(this);
     }
+    
+    //Fonction ObtenirVol()
     public Vol ObtenirVol() {
         for (Vol v; v instanceof Vol) {
             if (this in v.listepersonnel){
