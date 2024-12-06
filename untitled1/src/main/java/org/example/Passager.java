@@ -5,6 +5,7 @@ import java.util.List;
 
 public class Passager extends Personne {
     public int passeport;
+    
 
     //On stocke toutes les réservations dans une liste
     public List<Reservation> listDesVolsReserves;
@@ -84,8 +85,8 @@ public class Passager extends Personne {
     }
 
     //Fonction annulerReservation() : appeler la fonction déjà existante, changer ???
-    public void annulerReservation(Reservation resevation) {
-        this.listDeVolsReserves.remove(resevation);
+    public void String(int numeroReservation) {
+        reservation.annulerReservation();
     }
 
     //Fonction obtenirReservation()
@@ -95,8 +96,4 @@ public class Passager extends Personne {
         System.out.println("Pour ce passager : " + passager);
         System.out.println("Les infos de la résevation son les suivantes : ", reservation);
     }
-
-//    public static void String() {
-//        Reservation.annulerReservation();
-//    }
 }

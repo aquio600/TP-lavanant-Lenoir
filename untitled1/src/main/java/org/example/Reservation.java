@@ -65,7 +65,7 @@ public class Reservation {
         return null;
     }
 
-    //UPDATE
+    //UPDATE : Fonction modifierReservation() demandée
     public boolean modifierReservation(int numeroReservation, Date dateReservation, String statut) {
         Reservation reservation = prendReservation(numeroReservation);
         if (reservation != null) {
@@ -89,15 +89,8 @@ public class Reservation {
     }
     //Fin CRDU
 
-
     //Fonction confirmerReservation()
-    public void confirmerReservation() {
+    public void confirmerReservation(int numeroReservation, int statut) {
         this.statut ="confirmé";
-        //...
-    }
-
-    //Fonction modifierReservation()
-    public void modifierReservation() {
-        //...
     }
 }
