@@ -1,5 +1,9 @@
 package org.example;
 
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class Aeroport {
     String nom;
     String ville;
@@ -68,6 +72,15 @@ public class Aeroport {
         return false;
     }
 
+    private Aeroport prendAeroport(String nom) {
+        for (Aeroport a; a instanceof Aeroport) {
+            if (a.getNom() == nom) {
+                return a;
+            }
+        }
+        return void ;
+    }
+
     //DELETE
     public boolean supprimeAeroport(String nom) {
         Aeroport aeroport = prendAeroport(nom);
@@ -87,6 +100,6 @@ public class Aeroport {
 
     //Autre appel de la fonction... à revoir
     public static void String() {
-            Avion.affecterVol();
-        }
-}
+        Avion.affecterVol();
+    }
+}}

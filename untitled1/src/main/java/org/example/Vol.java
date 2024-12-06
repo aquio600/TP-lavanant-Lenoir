@@ -2,6 +2,7 @@ package org.example;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class Vol {
     int numeroVol;
@@ -79,7 +80,7 @@ public class Vol {
     }
     public Vol chercherVol(int numeroVol) {
         for (Vol vol : vols) {
-            if (vol.numeroVol() == numeroVol) {
+            if (vol.getNumeroVol() == numeroVol) {
                 return vol;
             }
         }
@@ -121,6 +122,14 @@ public class Vol {
     //Fonction ListingPassager()
     public void ListingPassager() {
         //...
+    }
+    private Vol prendVol(int num) {
+        for (Vol v = null; v instanceof Vol) {
+            if (v.getNumeroVol() == num) {
+                return v;
+            }
+        }
+        return void ;
     }
     public void addpersonel(Employé e){
         listepersonnel.add(e);
