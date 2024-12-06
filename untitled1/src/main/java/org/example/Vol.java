@@ -23,7 +23,6 @@ public class Vol {
         this.dateHeureArrivee = dateHeureArrivee;
         this.etat = etat;
         this.listepersonnel = new ArrayList<Employé>();
-
     }
 
     //Getter
@@ -117,7 +116,7 @@ public class Vol {
 
     //Fonction ListingPassager() 
     public void ListingPassager(int numeroVol) {
-        //montrer tous les passagers du vol
+        //On affiche tous les passagers du vol
         Vol vol = chercherVol(numeroVol);
         if (vol != null) {
             System.out.println("Liste des passagers pour le vol numéro " + numeroVol + " :");
