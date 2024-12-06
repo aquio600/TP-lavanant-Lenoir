@@ -17,7 +17,7 @@ public class Pilote extends Employé {
     //Fonction ObtenirVol()
     public Vol ObtenirVol() {
         for (Vol v; v instanceof Vol) {
-            if (this instanceof v.listepersonnel){
+            if (v.listepersonnel.contains(this) ){
                 return v;
             }
         }

@@ -27,7 +27,7 @@ public class PersonelCabine extends Employé{
     public Vol ObtenirVol(){
         public Vol ObtenirVol() {
             for (Vol v; v instanceof Vol) {
-                if (this instanceof v.listepersonnel){
+                if (v.listepersonnel.contains(this)  ){
                     return v;
                 }
             }
