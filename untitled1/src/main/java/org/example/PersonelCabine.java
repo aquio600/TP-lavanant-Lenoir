@@ -17,6 +17,19 @@ public class PersonelCabine extends Employé{
     public void ObtenirRole(){
         System.out.println("Role = personnel de cabine");
     }
-    public void AffecterVol(){}
-    public void ObtenirVol(){}
+    public void AffecterVol(Vol vol){
+        vol.addpersonel(this);
+
+
+    }
+    public void ObtenirVol(){
+        public Vol ObtenirVol() {
+            for (Vol v; v instanceof Vol) {
+                if (this in v.listepersonnel){
+                    return v;
+                }
+            }
+            return void ;
+        }
+    }
 }

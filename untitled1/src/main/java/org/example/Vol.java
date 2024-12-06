@@ -1,5 +1,6 @@
 package org.example;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Vol {
@@ -9,6 +10,7 @@ public class Vol {
     Date dateHeureDepart = new Date();
     Date dateHeureArrivee = new Date();
     String etat;
+    List<Employé> listepersonnel;
 
     //constructeur
     public Vol(int numeroVol, String origine, String destination, Date dateHeureDepart, Date dateHeureArrivee, String etat) {
@@ -18,6 +20,8 @@ public class Vol {
         this.dateHeureDepart = dateHeureDepart;
         this.dateHeureArrivee = dateHeureArrivee;
         this.etat = etat;
+        this.listepersonnel =new ArrayList<Employé>();
+
     }
 
     //Getter
@@ -60,54 +64,54 @@ public class Vol {
         this.etat = etat;
     }
 
-        //CRUD
-        private List<Vol> vols = new ArrayList<>();
+    //CRUD
+    private List<Vol> vols = new ArrayList<>();
 
-        //CREATE
-        public void ajouteVol(Vol vol) {
-            vols.add(vol);
-            System.out.println("Vol ajouté : " + vol);
-        }
-    
-        //READ
-        public List<Vol> listerVols() {
-            return vols;
-        }
-        public Vol chercherVol(int numeroVol) {
-            for (Vol vol : vols) {
-                if (vol.numeroVol() == numeroVol) {
-                    return vol;
-                }
+    //CREATE
+    public void ajouteVol(Vol vol) {
+        vols.add(vol);
+        System.out.println("Vol ajouté : " + vol);
+    }
+
+    //READ
+    public List<Vol> listerVols() {
+        return vols;
+    }
+    public Vol chercherVol(int numeroVol) {
+        for (Vol vol : vols) {
+            if (vol.numeroVol() == numeroVol) {
+                return vol;
             }
-            return null;
         }
-    
-        //UPDATE : fonction modifieVol() demandée 
-        public boolean modifieVol(int numeroVol, String origineModifie, String destinationModifie, Date dateHeureDepartModifie, Date dateHeureArriveeModifie, String etatModifie) {
-            Vol vol = prendVol(numeroVol);
-            if (vol != null) {
-                vol.setOrigine(origineModifie);
-                vol.setDestination(destinationModifie);
-                vol.setDateHeureDepart(dateHeureDepartModifie);
-                vol.setDateHeureArrivee(dateHeureArriveeModifie);
-                vol.setEtat(etatModifie);
-                System.out.println("Modification des infos du vol : " + vol);
-                return true;
-            }
-            return false;
+        return null;
+    }
+
+    //UPDATE : fonction modifieVol() demandée
+    public boolean modifieVol(int numeroVol, String origineModifie, String destinationModifie, Date dateHeureDepartModifie, Date dateHeureArriveeModifie, String etatModifie) {
+        Vol vol = prendVol(numeroVol);
+        if (vol != null) {
+            vol.setOrigine(origineModifie);
+            vol.setDestination(destinationModifie);
+            vol.setDateHeureDepart(dateHeureDepartModifie);
+            vol.setDateHeureArrivee(dateHeureArriveeModifie);
+            vol.setEtat(etatModifie);
+            System.out.println("Modification des infos du vol : " + vol);
+            return true;
         }
-    
-        //DELETE : fonction annulerVol() demandée
-        public boolean annuleVol(int numeroVol) {
-            Avion vol = prendVol(numeroVol);
-            if (vol != null) {
-                vols.remove(vol);
-                System.out.println("Le vol suivant est supprimé : " + vol);
-                return true;
-            }
-            return false;
+        return false;
+    }
+
+    //DELETE : fonction annulerVol() demandée
+    public boolean annuleVol(int numeroVol) {
+        Avion vol = prendVol(numeroVol);
+        if (vol != null) {
+            vols.remove(vol);
+            System.out.println("Le vol suivant est supprimé : " + vol);
+            return true;
         }
-        //Fin CRDU
+        return false;
+    }
+    //Fin CRDU
 
     //Fonction planifierVol()
     public void planifierVol() {
@@ -118,4 +122,8 @@ public class Vol {
     public void ListingPassager() {
         //...
     }
+    public void addpersonel(Employé e){
+        listepersonnel.add(e);
+    }
+
 }
