@@ -130,7 +130,7 @@ public class Vol {
     }
 
     private Vol prendVol(int num) {
-        for (Vol v = null; v instance of Vol) {
+        for (Vol v : vols) {
             if (v.getNumeroVol() == num) {
                 return v;
             }
