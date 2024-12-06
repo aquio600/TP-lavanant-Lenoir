@@ -84,7 +84,7 @@ public class Passager extends Personne {
         this.listDeVolsReserves.add(reservation);
     }
 
-    //Fonction annulerReservation() : appeler la fonction déjà existante, changer ???
+    //Fonction annulerReservation() : appeler la fonction déjà existante
     public void String(int numeroReservation) {
         reservation.annulerReservation();
     }

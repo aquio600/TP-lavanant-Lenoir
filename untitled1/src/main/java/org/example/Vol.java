@@ -68,8 +68,8 @@ public class Vol {
     //CRUD
     private List<Vol> vols = new ArrayList<>();
 
-    //CREATE
-    public void ajouteVol(Vol vol) {
+    //CREATE : Fonction planifierVol() demandée
+    public void planifierVol(Vol vol) {
         vols.add(vol);
         System.out.println("Vol ajouté : " + vol);
     }
@@ -114,12 +114,7 @@ public class Vol {
     }
     //Fin CRDU
 
-    //Fonction planifierVol()
-    public void planifierVol() {
-        //...
-    }
-
-    //Fonction ListingPassager()
+    //Fonction ListingPassager() !!
     public void ListingPassager() {
         //...
     }
