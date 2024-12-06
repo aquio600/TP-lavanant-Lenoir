@@ -12,6 +12,7 @@ public class Vol {
     Date dateHeureArrivee = new Date();
     String etat;
     List<Employé> listepersonnel;
+    List<Passager> listedespassagers;
 
     //constructeur
     public Vol(int numeroVol, String origine, String destination, Date dateHeureDepart, Date dateHeureArrivee, String etat) {
@@ -21,7 +22,7 @@ public class Vol {
         this.dateHeureDepart = dateHeureDepart;
         this.dateHeureArrivee = dateHeureArrivee;
         this.etat = etat;
-        this.listepersonnel =new ArrayList<Employé>();
+        this.listepersonnel = new ArrayList<Employé>();
 
     }
 
@@ -66,7 +67,7 @@ public class Vol {
     }
 
     //CRUD
-    private List<Vol> vols = new ArrayList<>();
+    public List<Vol> vols = new ArrayList<>();
 
     //CREATE : Fonction planifierVol() demandée
     public void planifierVol(Vol vol) {
@@ -104,7 +105,7 @@ public class Vol {
 
     //DELETE : fonction annulerVol() demandée
     public boolean annuleVol(int numeroVol) {
-        Avion vol = prendVol(numeroVol);
+        Vol vol = prendVol(numeroVol);
         if (vol != null) {
             vols.remove(vol);
             System.out.println("Le vol suivant est supprimé : " + vol);
@@ -114,20 +115,34 @@ public class Vol {
     }
     //Fin CRDU
 
-    //Fonction ListingPassager() !!
-    public void ListingPassager() {
-        //...
+    //Fonction ListingPassager() 
+    public void ListingPassager(int numeroVol) {
+        //montrer tous les passagers du vol
+        Vol vol = chercherVol(numeroVol);
+        if (vol != null) {
+            System.out.println("Liste des passagers pour le vol numéro " + numeroVol + " :");
+            for (Passager passager : vol.listedespassagers) {
+                System.out.println(passager);
+            }
+        } else {
+            System.out.println("Vol non trouvé.");
+        }
     }
+
     private Vol prendVol(int num) {
-        for (Vol v = null; v instanceof Vol) {
+        for (Vol v = null; v instance of Vol) {
             if (v.getNumeroVol() == num) {
                 return v;
             }
         }
-        return void ;
-    }
-    public void addpersonel(Employé e){
-        listepersonnel.add(e);
+        return null ;
     }
 
+    public void addpersonel(Employé perso){
+        listepersonnel.add(perso);
+    }
+
+    public void ajoutdepassager(Passager pass) {
+        listedespassagers.add(pass);
+    }  
 }
