@@ -94,8 +94,8 @@ public class Aeroport {
     //Fin méthode CRUD
 
     //Fonction affecterVol()
-    public void affecterVol() {
-        //appel de cette fonction normalement déjà définie dans la classe Vol
+    public void affecterVol(int vol) {
+        aeroports.ajouterAeroport();
     }
 
     //Autre appel de la fonction... à revoir

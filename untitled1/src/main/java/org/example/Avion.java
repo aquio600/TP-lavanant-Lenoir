@@ -99,6 +99,6 @@ public class Avion {
 
     //Fonction verifierDisponibilite()
     public void verifierDisponibilite() {
-        //...
+        //
     }
 }
